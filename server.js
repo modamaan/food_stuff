@@ -22,14 +22,7 @@ const __dirname = path.dirname(__filename)
 const app = express();
 
 //middleware
-app.use(cors(
-  {
-    origin:[https://food-stuff-omega.vercel.app/],
-    methods:["POST","GET" "PUT"],
-    credentials: true
-  }
-));
-mongoose.connect(' mongodb+srv://amaan:amaan@ecommerce.ufmoepy.mongodb.net/Ecommerce')
+app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, './client/build')))
